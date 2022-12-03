@@ -29,14 +29,17 @@ const SearchDropDown = (props: any) => {
 
     return (
         <>
-
-
             <div className='w-full max-w-lg'>
                 <div className='flex items-center mt-4'>
                     <input className='h-12 w-4/5 border outline-none rounded-xl px-3' type="text" placeholder='search a career here...' value={searchValue} onChange={onChange} />
-                    <span className='-m-10' onClick={() => onSearch(searchValue)}>
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                    </span>
+                    <div className={searchValue ? "flex items-center -m-16" : "flex items-center -m-10"}>
+                        {searchValue && <span onClick={() => setSearchValue("")}>
+                            <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                        </span>}
+                        <span onClick={() => onSearch(searchValue)}>
+                            <svg className=" w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </span>
+                    </div>
                 </div>
                 <div className={searchValue && "overflow-y-auto max-h-56 rounded-b-xl mt-2 w-4/5 z-50 overflow-visible bg-white"} >
                     {data
