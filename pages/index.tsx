@@ -5,11 +5,18 @@ import { useEffect, useState } from 'react'
 import HeroCard from '../components/HeroCard'
 import Footer from '../components/main/Footer'
 import Header from '../components/main/Header'
+import SearchDropDown from '../components/main/SearchDropDown'
 import Testimonial from '../components/main/Testimonial'
 
 
 const Home: NextPage = () => {
   const [careerName, setCareerName] = useState("Software Engineer");
+  const [value, setValue] = useState()
+
+
+  const handleValue = (a: any) => {
+    setValue(a)
+  }
 
 
   useEffect(() => {
@@ -29,28 +36,32 @@ const Home: NextPage = () => {
 
   return (
 
+
+
     <>
       <Header />
       <div className='w-full m-auto bg-blue-100'>
-        <div className="h-full sdm:h-[65vh] w-full m-auto relative overflow-hidden max-w-7xl px-4 bg-blue-100">
+        <div className={value ? "h-[70vh] sdm:h-[80vh] w-full m-auto relative overflow-hidden max-w-7xl px-4 bg-blue-100" : "h-full sdm:h-[80vh] w-full m-auto relative overflow-hidden max-w-7xl px-4 bg-blue-100"}>
           <div className='flex flex-row justify-between '>
-            <div className='flex flex-col item-center justify-center gap-3 w-full h-96 mt-10'>
+            <div className='flex flex-col item-center justify-start gap-3 w-full h-96 mt-20 sd:mt-32'>
               <h1 className='text-2xl lg:text-4xl'>How to Become <br />
                 A <span className='bg-green-300'>{careerName}</span></h1>
               <h3>Search 850+ top careers and get detailed  career path step-by-step.
               </h3>
-              <div className='flex items-center max-w-md mt-4'>
+              {/* <div className='flex items-center max-w-md mt-4'>
                 <input className=' h-12 w-4/5 border outline-none rounded-xl px-3' type="text" placeholder='search a career here...' />
                 <span className='-m-10'>
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                 </span>
-              </div>
-              <span className='flex flex-col items-start md:flex-row md:items-center gap-1 ml-2'>
+              </div> */}
+              <SearchDropDown handleValue={handleValue} />
+              {!value && <span className='flex flex-col items-start md:flex-row md:items-center gap-1 ml-2'>
                 <span>
                   <img src="media/users-group.avif" className='w-20 md:w-24' alt="logo" />
                 </span>
                 <span className='text-xs'>& 200+ people already searched today</span>
-              </span>
+              </span>}
+
             </div>
             <div className='hidden w-full relative bg-transparent sdm:flex flex-row justify-end gap-2 px-2'>
               <div className="hidden slide-track sdm:flex flex-col bg-transparent gap-2">
