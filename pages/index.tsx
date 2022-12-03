@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import HeroCard from '../components/HeroCard'
 import Footer from '../components/main/Footer'
 import Header from '../components/main/Header'
@@ -8,6 +9,29 @@ import Testimonial from '../components/main/Testimonial'
 
 
 const Home: NextPage = () => {
+  const [careerName, setCareerName] = useState("Software Engineer");
+
+
+  useEffect(() => {
+    setInterval(() => {
+      setTimeout(() => {
+        setCareerName("Digital Marketer")
+      }, 2000)
+
+      setTimeout(() => {
+        setCareerName("Air Hostes")
+      }, 4000)
+
+      setTimeout(() => {
+        setCareerName("Business Analyst")
+      }, 6000)
+
+      setTimeout(() => {
+        setCareerName("Project Manager")
+      }, 8000)
+    }, 1000)
+  }, [])
+
   return (
 
     <>
@@ -17,7 +41,7 @@ const Home: NextPage = () => {
           <div className='flex flex-row justify-between '>
             <div className='flex flex-col item-center justify-center gap-3 w-full h-96 mt-10'>
               <h1 className='text-2xl lg:text-4xl'>How to Become <br />
-                a Software Engineer</h1>
+                A <span className='bg-green-300'>{careerName}</span></h1>
               <h3>Search 850+ top careers and get detailed  career path step-by-step.
               </h3>
               <div className='flex items-center max-w-md mt-4'>
