@@ -32,7 +32,7 @@ const Home: NextPage = () => {
     <>
       <Header />
       <div className='w-full m-auto bg-blue-100'>
-        <div className="slider overflow-hidden max-w-7xl m-auto px-4 bg-blue-100">
+        <div className="h-full sdm:h-[65vh] w-full m-auto relative overflow-hidden max-w-7xl px-4 bg-blue-100">
           <div className='flex flex-row justify-between '>
             <div className='flex flex-col item-center justify-center gap-3 w-full h-96 mt-10'>
               <h1 className='text-2xl lg:text-4xl'>How to Become <br />
@@ -52,7 +52,6 @@ const Home: NextPage = () => {
                 <span className='text-xs'>& 200+ people already searched today</span>
               </span>
             </div>
-            {/* <div className='slider flex flex-row justify-between relative overflow-hidden m-auto w-full h-[600px]'> */}
             <div className='hidden w-full relative bg-transparent sdm:flex flex-row justify-end gap-2 px-2'>
               <div className="hidden slide-track sdm:flex flex-col bg-transparent gap-2">
                 <HeroCard name="Web Designer" />

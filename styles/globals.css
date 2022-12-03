@@ -38,13 +38,12 @@
 }
 
 
-.slider {
-    height: 65vh;
+/* .slider {
     margin: auto;
     overflow: hidden;
     position: relative;
     width: 100%;
-}
+} */
 
 .slide-h {
     animation: scroll 40s linear infinite;
