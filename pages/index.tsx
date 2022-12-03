@@ -19,17 +19,12 @@ const Home: NextPage = () => {
       }, 2000)
 
       setTimeout(() => {
-        setCareerName("Air Hostes")
-      }, 4000)
-
-      setTimeout(() => {
         setCareerName("Business Analyst")
-      }, 6000)
-
+      }, 4000)
       setTimeout(() => {
         setCareerName("Project Manager")
-      }, 8000)
-    }, 1000)
+      }, 6000)
+    }, 6400)
   }, [])
 
   return (
@@ -62,7 +57,7 @@ const Home: NextPage = () => {
               <div className="hidden slide-track sdm:flex flex-col bg-transparent gap-2">
                 <HeroCard name="Web Designer" />
                 <HeroCard name="Dentist" />
-                <HeroCard name="Astronautr" />
+                <HeroCard name="Astronaut" />
                 <HeroCard name="Math Teacher" />
                 <HeroCard name="Youtuber" />
                 <HeroCard name="software engineer" />
@@ -78,7 +73,7 @@ const Home: NextPage = () => {
                 <HeroCard name="Civil Engineer" />
                 <HeroCard name="Web Designer" />
                 <HeroCard name="Dentist" />
-                <HeroCard name="Astronautr" />
+                <HeroCard name="Astronaut" />
                 <HeroCard name="Math Teacher" />
                 <HeroCard name="Youtuber" />
                 <HeroCard name="software engineer" />
@@ -103,7 +98,7 @@ const Home: NextPage = () => {
                 <HeroCard name="Digital Marketer" />
                 <HeroCard name="Air Hostess" />
                 <HeroCard name="Web Designer" />
-                <HeroCard name="Astronautr" />
+                <HeroCard name="Astronaut" />
                 <HeroCard name="Project Manager" />
                 <HeroCard name="Math Teacher" />
                 <HeroCard name="Network Engineer" />
@@ -118,7 +113,7 @@ const Home: NextPage = () => {
                 <HeroCard name="Air Hostess" />
                 <HeroCard name="Dentist" />
                 <HeroCard name="Project Manager" />
-                <HeroCard name="Astronautr" />
+                <HeroCard name="Astronaut" />
                 <HeroCard name="Business Analyst" />
                 <HeroCard name="Graphic Designer" />
                 <HeroCard name="Civil Engineer" />
