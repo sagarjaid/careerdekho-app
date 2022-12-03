@@ -31,9 +31,9 @@ const Header = () => {
                     <ul className='flex flex-col gap-4'>
                         <li><a href="/">home</a></li>
                         <li ><a href="/OurStory">our fuel</a></li>
-                        <li> <a href="#">community</a> </li>
-                        <li> <a href="#">login</a> </li>
-                        <li><button className='border h-10 px-4 bg-green-500 rounded-md text-white'>get started</button></li>
+                        <li><a href="https://chat.whatsapp.com/Fw89tfjh2Yv3Kzhy8IcNbX" target="_blank" rel="noopener noreferrer">community</a></li>
+                        <li> <a href="https://app.careerdekho.ai/login">login</a> </li>
+                        <li><a className='border h-10 py-2 px-4 bg-green-500 rounded-md text-white' href="https://app.careerdekho.ai/login">get started</a></li>
                     </ul>
                 </div> : ""}
             </div>

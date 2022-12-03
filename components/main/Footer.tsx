@@ -9,7 +9,7 @@ const Footer = () => {
                         <div className='-ml-2'>
                             <img src="../../media/careerdekho-logo.svg" width="180px" alt="logo" />
                         </div>
-                        <div className='text-xs text-gray-300'>© CAREERDEKHO 2022 All Rights reserved</div>
+                        <div className='text-xs text-gray-500'>© CAREERDEKHO 2022 All Rights reserved</div>
                     </div>
                     <div className='w-full flex flex-col gap-6'>
                         <div className='flex flex-col sd:flex-row justify-around gap-3 '>
