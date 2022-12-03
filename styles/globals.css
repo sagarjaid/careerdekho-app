@@ -1,3 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* Chrome, Edge, and Safari */
+/* *::-webkit-scrollbar {
+    width: 15px;
+} */
+
+/* *::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 5px;
+} */
+
+/* *::-webkit-scrollbar-thumb {
+    background-color: gray;
+    border-radius: 14px;
+    border: 3px solid white;
+} */
+
+@layer base {
+    html {
+        font-family: 'Space Grotesk', sans-serif, system-ui;
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(calc(-250px * 7))
+    }
+}
+
+
+.slider {
+    height: 65vh;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slide-h {
+    animation: scroll 40s linear infinite;
+    /* width: calc(250px * 14); */
+}
+
+.slide-track {
+    animation: scroll 40s linear infinite;
+    /* width: calc(250px * 14); */
+}
+
+.slide-track-2 {
+    animation: scroll 25s linear infinite;
+    /* width: calc(250px * 14); */
+}
+
+.slide-track-3 {
+    animation: scroll 35s linear infinite;
+    /* width: calc(250px * 14); */
+}
