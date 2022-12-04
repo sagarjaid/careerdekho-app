@@ -31,7 +31,7 @@ const id = () => {
                     <div className='w-full flex justify-center'>
                         <img src="../media/doc.png" width="300px" alt="doc" />
                     </div>
-                    <button className='sdm:hidden w-full mb-6 border h-10 px-4 bg-green-500 rounded-md text-white'>get it for FREE!</button>
+                    <button onClick={() => router.push("/login")} className='sdm:hidden w-full mb-6 border h-10 px-4 bg-green-500 rounded-md text-white'>get it for FREE!</button>
 
                     <div className='flex flex-col w-full gap-8 justify-around m-auto'>
                         <div className='w-full border rounded-lg p-4 bg-white hover:translate-y-2 hover:shadow-md'>
@@ -42,8 +42,8 @@ const id = () => {
                             <h3 className='text-xl font-medium'>FREE 1:1 Call with a career discovery session (45min)</h3>
                             <p className='mt-2 text-sm'>Neque porro quisquam est qui dolorem ipsum quia dolor<br /> sit amet, consectetur, adipisci velit...</p>
                         </div>
-                        <button className='border h-10 px-4 bg-green-500 rounded-md text-white'>get it for FREE!</button>
-                        <Modal />
+                        <button onClick={() => router.push("/login")} className='border h-10 px-4 bg-green-500 rounded-md text-white'>get it for FREE!</button>
+                        {/* <Modal /> */}
                     </div>
 
                 </div>
