@@ -27,7 +27,7 @@ const Header = () => {
                         <li><a className='border h-10 py-2 px-4 bg-green-500 rounded-md text-white' href="/login">get started</a></li>
                     </ul>
                 </div>
-                {toggle ? <div className='absolute z-50 bg-white px-6 w-screen sd:w-[35%]  right-0 h-screen lg:hidden mt-4'>
+                {toggle ? <div className='absolute z-50 bg-white px-6 w-screen sd:w-[35%]  right-0 h-screen lg:hidden pt-4'>
                     <ul className='flex flex-col gap-6'>
                         <li><a href="/">home</a></li>
                         <li ><a href="/about">our fuel</a></li>
