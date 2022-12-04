@@ -16,14 +16,14 @@ const Footer = () => {
 
                             <ul className='w-full'>
                                 <li>company</li>
-                                <li className='text-sm mt-2'><a href="/ourstory">our story</a></li>
-                                <li className='text-sm'><a href="/contact">contact us</a></li>
+                                <li className='text-sm mt-2'><a href="/about">our story</a></li>
+                                <li className='text-sm'><a href="/location">contact us</a></li>
                             </ul>
 
                             <ul className='w-full -ml-1'>
                                 <li>legal</li>
                                 <li className='text-sm mt-2'><a href="/tc">terms of use</a> </li>
-                                <li className='text-sm'><a href="/privacypolicy">privacy policy</a></li>
+                                <li className='text-sm'><a href="/pp">privacy policy</a></li>
                             </ul>
 
                             <ul className='w-full'>
