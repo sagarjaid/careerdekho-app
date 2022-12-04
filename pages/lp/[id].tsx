@@ -45,7 +45,6 @@ const id = () => {
                         <button onClick={() => router.push("/login")} className='border h-10 px-4 bg-green-500 rounded-md text-white'>get it for FREE!</button>
                         {/* <Modal /> */}
                     </div>
-
                 </div>
             </div>
         </>
