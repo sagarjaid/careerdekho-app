@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 
 const Menu = (props: any) => {
-    const [toggle, setToggle] = useState(true)
+    const [toggle, setToggle] = useState(false)
     initFirebase();
     const auth = getAuth();
     const router = useRouter();

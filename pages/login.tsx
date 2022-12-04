@@ -30,6 +30,7 @@ const Login = () => {
         <div className='flex flex-col gap-2 justify-center items-center h-screen'>
             <h1>Login</h1>
             <img
+                className='cursor-pointer'
                 src="https://www.vizio.com/en/account/images/buttons-social-google-web.png"
                 alt="logo"
                 width="240px"
