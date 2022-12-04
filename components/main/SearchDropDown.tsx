@@ -3,7 +3,7 @@ import data from "./data"
 
 const SearchDropDown = (props: any) => {
 
-    const { handleValue } = props
+    const { handleValue, style, type } = props
 
     const [searchValue, setSearchValue] = useState("");
 
@@ -18,7 +18,7 @@ const SearchDropDown = (props: any) => {
 
         // const url = `${window.location.hostname}\\s\\${searchTerm}`
 
-        const url = `\\lp\\${searchTerm}`
+        const url = (type ? `\\s\\${searchTerm}` : `\\lp\\${searchTerm}`)
 
         window.location.href = url;
 
@@ -31,7 +31,7 @@ const SearchDropDown = (props: any) => {
         <>
             <div className='w-full max-w-lg'>
                 <div className='flex items-center mt-4'>
-                    <input className='h-12 w-4/5 border outline-none rounded-xl px-3' type="text" placeholder='search a career here...' value={searchValue} onChange={onChange} />
+                    <input className={`${style} h-12 border outline-none rounded-xl px-3`} type="text" placeholder='search a career here...' value={searchValue} onChange={onChange} />
                     <div className={searchValue ? "flex items-center -m-16" : "flex items-center -m-10"}>
                         {searchValue && <span onClick={() => setSearchValue("")}>
                             <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -41,7 +41,7 @@ const SearchDropDown = (props: any) => {
                         </span>
                     </div>
                 </div>
-                <div className={searchValue && "overflow-y-auto max-h-56 rounded-b-xl mt-2 w-4/5 z-50 overflow-visible bg-white"} >
+                <div className={searchValue && `${style} overflow-y-auto max-h-56 rounded-b-xl mt-2 z-50 overflow-visible bg-white`} >
                     {data
                         .filter((item) => {
                             const searchTerm = searchValue.toLowerCase();

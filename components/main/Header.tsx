@@ -21,19 +21,19 @@ const Header = () => {
                     </span>
                     <ul className='hidden lg:flex items-center gap-4'>
                         <li><a href="/">home</a></li>
-                        <li ><a href="/OurStory">our fuel</a></li>
+                        <li ><a href="/ourstory">our fuel</a></li>
                         <li><a href="https://chat.whatsapp.com/Fw89tfjh2Yv3Kzhy8IcNbX" target="_blank" rel="noopener noreferrer">community</a></li>
-                        <li> <a href="https://app.careerdekho.ai/login">login</a> </li>
-                        <li><a className='border h-10 py-2 px-4 bg-green-500 rounded-md text-white' href="https://app.careerdekho.ai/login">get started</a></li>
+                        <li> <a href="/login">login</a> </li>
+                        <li><a className='border h-10 py-2 px-4 bg-green-500 rounded-md text-white' href="/login">get started</a></li>
                     </ul>
                 </div>
-                {toggle ? <div className='absolute z-50 bg-white px-6 w-screen sd:w-[30%]  right-0 h-screen lg:hidden'>
+                {toggle ? <div className='absolute z-50 bg-white px-6 w-screen sd:w-[35%]  right-0 h-screen lg:hidden'>
                     <ul className='flex flex-col gap-4'>
                         <li><a href="/">home</a></li>
-                        <li ><a href="/OurStory">our fuel</a></li>
+                        <li ><a href="/ourstory">our fuel</a></li>
                         <li><a href="https://chat.whatsapp.com/Fw89tfjh2Yv3Kzhy8IcNbX" target="_blank" rel="noopener noreferrer">community</a></li>
-                        <li> <a href="https://app.careerdekho.ai/login">login</a> </li>
-                        <li><a className='border h-10 py-2 px-4 bg-green-500 rounded-md text-white' href="https://app.careerdekho.ai/login">get started</a></li>
+                        <li> <a href="/login">login</a> </li>
+                        <li><a className='border h-10 py-2 px-4 bg-green-500 rounded-md text-white' href="/login">get started</a></li>
                     </ul>
                 </div> : ""}
             </div>

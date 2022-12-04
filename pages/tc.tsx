@@ -6,7 +6,6 @@ import Header from '../components/main/Header'
 const TC = () => {
     return (
         <>
-            <Header />
             <div className='max-w-7xl  m-auto h-full flex justify-center items-center p-4 my-14'>
                 <div className='flex flex-col gap-2 '>
                     <h2>Terms of Use</h2>
@@ -37,7 +36,6 @@ const TC = () => {
                     <p>Any claim related to careerdekho’s Website shall be governed by the laws of in without regards to its conflict of law provisions.</p>
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

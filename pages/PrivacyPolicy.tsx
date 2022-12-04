@@ -6,7 +6,6 @@ import Header from '../components/main/Header'
 const PrivacyPolicy = () => {
     return (
         <>
-            <Header />
             <div className='max-w-7xl  m-auto h-full flex justify-center items-center p-4  my-14'>
                 <div className='flex flex-col gap-2'>
                     <h1 >Privacy Policy</h1>
@@ -37,7 +36,6 @@ const PrivacyPolicy = () => {
 
                 </div>
             </div>
-            <Footer />
         </>
     )
 }

@@ -7,11 +7,27 @@ import Footer from '../components/main/Footer'
 import Header from '../components/main/Header'
 import SearchDropDown from '../components/main/SearchDropDown'
 import Testimonial from '../components/main/Testimonial'
+import { initFirebase } from '../firebase/Firebase';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 
 const Home: NextPage = () => {
   const [careerName, setCareerName] = useState("Software Engineer");
   const [value, setValue] = useState()
+
+  initFirebase()
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+  const [user, loading] = useAuthState(auth);
+  const router = useRouter();
+
+  if (user) {
+    router.push("/dash");
+    console.log(user, "user login Page");
+    return <div className='flex justify-center items-center h-screen'>Loading...</div>;
+  }
 
 
   const handleValue = (a: any) => {
@@ -35,11 +51,7 @@ const Home: NextPage = () => {
   }, [])
 
   return (
-
-
-
     <>
-      <Header />
       <div className='w-full m-auto bg-blue-100'>
         <div className={value ? "h-[70vh] sdm:h-[80vh] w-full m-auto relative overflow-hidden max-w-7xl px-4 bg-blue-100" : "h-full sdm:h-[80vh] w-full m-auto relative overflow-hidden max-w-7xl px-4 bg-blue-100"}>
           <div className='flex flex-row justify-between '>
@@ -48,13 +60,7 @@ const Home: NextPage = () => {
                 A <span className='bg-green-300'>{careerName}</span></h1>
               <h3>Search 850+ top careers and get detailed  career path step-by-step.
               </h3>
-              {/* <div className='flex items-center max-w-md mt-4'>
-                <input className=' h-12 w-4/5 border outline-none rounded-xl px-3' type="text" placeholder='search a career here...' />
-                <span className='-m-10'>
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-                </span>
-              </div> */}
-              <SearchDropDown handleValue={handleValue} />
+              <SearchDropDown handleValue={handleValue} style="w-4/5" />
               {!value && <span className='flex flex-col items-start md:flex-row md:items-center gap-1 ml-2'>
                 <span>
                   <img src="media/users-group.avif" className='w-20 md:w-24' alt="logo" />
@@ -65,75 +71,75 @@ const Home: NextPage = () => {
             </div>
             <div className='hidden w-full relative bg-transparent sdm:flex flex-row justify-end gap-2 px-2'>
               <div className="hidden slide-track sdm:flex flex-col bg-transparent gap-2">
-                <HeroCard name="Web Designer" />
-                <HeroCard name="Dentist" />
-                <HeroCard name="Astronaut" />
-                <HeroCard name="Math Teacher" />
-                <HeroCard name="Youtuber" />
-                <HeroCard name="software engineer" />
-                <HeroCard name="Digital Marketer" />
-                <HeroCard name="Graphic Designer" />
-                <HeroCard name="Data Scientist" />
-                <HeroCard name="Business Analyst" />
-                <HeroCard name="Network Engineer" />
-                <HeroCard name="Fashion Designer" />
-                <HeroCard name="Financial Analyst" />
-                <HeroCard name="Air Hostess" />
-                <HeroCard name="Project Manager" />
-                <HeroCard name="Civil Engineer" />
-                <HeroCard name="Web Designer" />
-                <HeroCard name="Dentist" />
-                <HeroCard name="Astronaut" />
-                <HeroCard name="Math Teacher" />
-                <HeroCard name="Youtuber" />
-                <HeroCard name="software engineer" />
-                <HeroCard name="Digital Marketer" />
-                <HeroCard name="Graphic Designer" />
-                <HeroCard name="Data Scientist" />
-                <HeroCard name="Business Analyst" />
-                <HeroCard name="Network Engineer" />
-                <HeroCard name="Fashion Designer" />
-                <HeroCard name="Financial Analyst" />
-                <HeroCard name="Air Hostess" />
-                <HeroCard name="Project Manager" />
-                <HeroCard name="Civil Engineer" />
+                <HeroCard name="Web Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Dentist" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Astronaut" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Math Teacher" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Youtuber" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Software Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Digital Marketer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Graphic Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Data Scientist" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Business Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Network Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Fashion Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Financial Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Air Hostess" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Project Manager" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Civil Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Web Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Dentist" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Astronaut" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Math Teacher" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Youtuber" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Software Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Digital Marketer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Graphic Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Data Scientist" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Business Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Network Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Fashion Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Financial Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Air Hostess" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Project Manager" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Civil Engineer" style="w-52 h-52 bg-transparent" />
 
               </div>
               <div className="hidden md:flex slide-track-2  flex-col bg-transparent gap-2">
-                <HeroCard name="software engineer" />
-                <HeroCard name="Civil Engineer" />
-                <HeroCard name="Fashion Designer" />
-                <HeroCard name="Data Scientist" />
-                <HeroCard name="Graphic Designer" />
-                <HeroCard name="Digital Marketer" />
-                <HeroCard name="Air Hostess" />
-                <HeroCard name="Web Designer" />
-                <HeroCard name="Astronaut" />
-                <HeroCard name="Project Manager" />
-                <HeroCard name="Math Teacher" />
-                <HeroCard name="Network Engineer" />
-                <HeroCard name="Youtuber" />
-                <HeroCard name="Financial Analyst" />
-                <HeroCard name="Business Analyst" />
-                <HeroCard name="Dentist" />
+                <HeroCard name="Software Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Civil Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Fashion Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Data Scientist" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Graphic Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Digital Marketer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Air Hostess" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Web Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Astronaut" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Project Manager" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Math Teacher" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Network Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Youtuber" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Financial Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Business Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Dentist" style="w-52 h-52 bg-transparent" />
               </div>
               <div className="hidden slide-track lg:flex  flex-col bg-transparent gap-2">
-                <HeroCard name="Data Scientist" />
-                <HeroCard name="software engineer" />
-                <HeroCard name="Air Hostess" />
-                <HeroCard name="Dentist" />
+                <HeroCard name="Data Scientist" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Software Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Air Hostess" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Dentist" style="w-52 h-52 bg-transparent" />
                 <HeroCard name="Project Manager" />
-                <HeroCard name="Astronaut" />
-                <HeroCard name="Business Analyst" />
-                <HeroCard name="Graphic Designer" />
-                <HeroCard name="Civil Engineer" />
-                <HeroCard name="Financial Analyst" />
-                <HeroCard name="Network Engineer" />
-                <HeroCard name="Web Designer" />
-                <HeroCard name="Fashion Designer" />
-                <HeroCard name="Math Teacher" />
-                <HeroCard name="Youtuber" />
-                <HeroCard name="Digital Marketer" />
+                <HeroCard name="Astronaut" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Business Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Graphic Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Civil Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Financial Analyst" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Network Engineer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Web Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Fashion Designer" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Math Teacher" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Youtuber" style="w-52 h-52 bg-transparent" />
+                <HeroCard name="Digital Marketer" style="w-52 h-52 bg-transparent" />
               </div>
             </div>
           </div>
@@ -193,8 +199,6 @@ const Home: NextPage = () => {
             <Testimonial />
             <Testimonial />
           </div>
-          {/* <div className="bg-gradient-to-t from-slate-600 h-40 relative -top-20 z-10">hello</div> */}
-          {/* <button className='h-10 px-4 w-max rounded-full'>& More</button> */}
         </div>
       </div>
 
@@ -208,7 +212,6 @@ const Home: NextPage = () => {
           </span>
         </div>
       </div>
-      <Footer />
     </>
   )
 }
