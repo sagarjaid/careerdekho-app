@@ -62,9 +62,9 @@ const Nav = () => {
                         <span className="m-1">Profile</span>
                     </div>
 
-                    <div onClick={() => router.push("/Setting")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => router.push("/Settings")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/settings.svg" alt="settings" />
-                        <span className="m-1">Setting</span>
+                        <span className="m-1">Settings</span>
                     </div>
 
                     <div onClick={() => router.push("/help")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">

@@ -62,9 +62,9 @@ const Menu = (props: any) => {
                     {!toggle && <span className="m-1">Profile</span>}
                 </div>
 
-                <div onClick={() => router.push("/setting")} className={toggle ? "flex justify-center items-center gap-2 cursor-pointer hover:bg-white rounded-sm p-2" : "flex justify-start items-center gap-2 cursor-pointer hover:bg-white rounded-sm px-2"}>
+                <div onClick={() => router.push("/settings")} className={toggle ? "flex justify-center items-center gap-2 cursor-pointer hover:bg-white rounded-sm p-2" : "flex justify-start items-center gap-2 cursor-pointer hover:bg-white rounded-sm px-2"}>
                     <img className="w-5 h-5" src="../../media/settings.svg" alt="settings" />
-                    {!toggle && <span className="m-1">Setting</span>}
+                    {!toggle && <span className="m-1">Settings</span>}
                 </div>
 
                 <div onClick={() => router.push("/help")} className={toggle ? "flex justify-center items-center gap-2 cursor-pointer hover:bg-white rounded-sm p-2" : "flex justify-start items-center gap-2 cursor-pointer hover:bg-white rounded-sm px-2"}>
