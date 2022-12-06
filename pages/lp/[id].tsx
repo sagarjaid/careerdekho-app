@@ -14,11 +14,10 @@ const id = () => {
     const auth = getAuth();
     const [user, loading] = useAuthState(auth);
 
-    if (user) {
-        router.push("/dash");
-        console.log(user, "user login Page");
-    }
-
+    // if (user) {
+    //     router.push("/dash");
+    //     console.log(user, "user login Page");
+    // }
 
     return (
         <>

@@ -20,7 +20,7 @@ const id = () => {
     }
 
     if (!user) {
-        router.push("/");
+        router.push(`/lp/${router.query.id}`);
         console.log("no user found: login Page");
         return <div className='flex justify-center items-center h-screen gap-2'>
             <button disabled type="button" className="text-white bg-blue-400 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 inline-flex items-center">

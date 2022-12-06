@@ -7,13 +7,63 @@ import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Menu from '../components/Menu';
 import Nav from '../components/Nav';
+import { ReactElement, ReactNode, useEffect, useState } from 'react';
+import Onboarding from './onboarding';
+import { useRouter } from 'next/router'
+import { NextPage } from 'next'
 
 function MyApp({ Component, pageProps }: AppProps) {
+
+  const [onboarded, setOnboarded] = useState(false);
+
+  const router = useRouter()
+
 
   initFirebase()
   const auth = getAuth();
   const [user, loading] = useAuthState(auth);
-  const style = "border-top-color:transparent"
+
+
+
+
+
+  useEffect(() => {
+
+    if (user) {
+      console.log(user, " user got called");
+
+      let userApiuid
+
+      let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/usersDb/data';
+      fetch(url)
+        .then((response) => response.json())
+        .then(json => {
+
+          userApiuid = json.data[0]?.uid || ""
+
+          console.log(user.uid, "uid");
+
+          console.log(userApiuid, "userApiuid");
+
+          if (user.uid == userApiuid) {
+            console.log("true got called");
+            setOnboarded(true)
+
+            if (router.pathname === "/onboarding") {
+              router.push("/dash")
+            }
+
+          } else {
+            console.log("false got called");
+            setOnboarded(false)
+            router.push("/onboarding")
+
+          }
+        })
+    }
+
+  }, [user]);
+
 
 
   if (loading) {
@@ -25,12 +75,52 @@ function MyApp({ Component, pageProps }: AppProps) {
         </svg>
         Loading...
       </button>
-    </div >;
-
+    </div >
   }
 
   return (
     <>
+
+      {!user &&
+        (
+          <div>
+            <Header />
+            <main >
+              <Component {...pageProps} />
+            </main>
+            <Footer />
+          </div>
+        )
+      }
+
+
+
+      {/* {user && (onboarded === true) &&
+        (
+          <div className='flex justify-start bg-white text-base h-screen'>
+            <div>
+              <Menu />
+            </div>
+            <div className='w-full flex flex-col'>
+              <Nav />
+              <Component  {...pageProps} />
+            </div>
+          </div >
+        )
+      } */}
+
+      {/* {user && (onboarded === false) &&
+        (
+          <div>
+            <main>
+              <Component  {...pageProps} />
+            </main>
+
+          </div>
+        )
+      } */}
+
+
       {user &&
         (
           <div className='flex justify-start bg-white text-base h-screen'>
@@ -39,22 +129,16 @@ function MyApp({ Component, pageProps }: AppProps) {
             </div>
             <div className='w-full flex flex-col'>
               <Nav />
-              <Component {...pageProps} />
+              <Component  {...pageProps} />
             </div>
           </div >
         )
       }
-      {!user &&
-        (
-          <div>
-            <Header />
-            <main>
-              <Component {...pageProps} />
-            </main>
-            <Footer />
-          </div>
-        )
-      }
+
+
+
+
+
     </>
   )
 }

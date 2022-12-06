@@ -33,7 +33,7 @@ const Nav = () => {
 
     return (
         <div>
-            <div className='sticky top-0 left-0 flex justify-between items-center h-16 p-4 bg-white'>
+            <div className='sticky top-0 left-0 flex justify-between items-center h-16 p-4 bg-white' id="mainNav">
                 <div className='lg:hidden'>
                     <a href="/"><img src="../../media/careerdekho-logo.svg" width="210px" alt="logo" /></a>
                 </div>

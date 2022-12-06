@@ -21,7 +21,7 @@ const Menu = (props: any) => {
     }
 
     return (
-        <section className={toggle ? 'hidden lg:flex flex-col justify-between w-20 bg-gray-100 h-screen p-4 pt-7 ' : 'hidden lg:flex  flex-col justify-between w-64 bg-gray-100 h-screen p-4 pt-7 '}>
+        <section id="mainMenu" className={toggle ? 'hidden lg:flex flex-col justify-between w-20 bg-gray-100 h-screen p-4 pt-7 ' : 'hidden lg:flex  flex-col justify-between w-64 bg-gray-100 h-screen p-4 pt-7 '}>
             <div className={toggle ? 'flex flex-col gap-1' : 'flex flex-col gap-3.5'}>
                 {/* logo */}
                 <div className="mb-4 cursor-pointer">
