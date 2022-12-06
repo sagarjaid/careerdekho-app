@@ -118,9 +118,8 @@ const Onboarding = (props: any) => {
             .then(json => {
                 // Do something with object
                 console.log(json.datum);
-                // router.push("/dash")
+                router.push("/dash")
             });
-
 
     }
 

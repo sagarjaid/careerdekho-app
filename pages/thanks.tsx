@@ -22,40 +22,40 @@ const dash = () => {
     const [user, loading] = useAuthState(auth);
     const router = useRouter();
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        if (user) {
-            console.log(user, " user got called");
+    //     if (user) {
+    //         console.log(user, " user got called");
 
-            let userApiuid
+    //         let userApiuid
 
-            let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/usersDb/data';
-            fetch(url)
-                .then((response) => response.json())
-                .then(json => {
-                    userApiuid = json.data[0]?.uid || ""
+    //         let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/usersDb/data';
+    //         fetch(url)
+    //             .then((response) => response.json())
+    //             .then(json => {
+    //                 userApiuid = json.data[0]?.uid || ""
 
 
-                    console.log(user.uid, "uid");
+    //                 console.log(user.uid, "uid");
 
-                    console.log(userApiuid, "userApiuid");
+    //                 console.log(userApiuid, "userApiuid");
 
-                    if (user.uid == userApiuid) {
-                        console.log("true got called");
+    //                 if (user.uid == userApiuid) {
+    //                     console.log("true got called");
 
-                        if (router.pathname === "/onboarding") {
-                            router.push("/dash")
-                        }
+    //                     if (router.pathname === "/onboarding") {
+    //                         router.push("/dash")
+    //                     }
 
-                    } else {
-                        console.log("false got called");
-                        router.push("/onboarding")
+    //                 } else {
+    //                     console.log("false got called");
+    //                     router.push("/onboarding")
 
-                    }
-                })
-        }
+    //                 }
+    //             })
+    //     }
 
-    }, [user]);
+    // }, [user]);
 
     if (user) {
         console.log(user, "user dash Page");
