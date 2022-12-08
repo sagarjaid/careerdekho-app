@@ -46,7 +46,7 @@ const id = () => {
                 </div>
                 <div className='flex flex-col sdm:flex-row gap-2 items-center justify-between'>
                     <div className='w-full flex justify-center'>
-                        <img src="../media/doc.png" width="300px" alt="doc" />
+                        <img src="../media/doc-v2.png" width="300px" alt="doc" />
                     </div>
                     <button onClick={handleRedirect} className='sdm:hidden w-full mb-6 border h-10 px-4 bg-green-500 rounded-md text-white'>get it for FREE!</button>
 
