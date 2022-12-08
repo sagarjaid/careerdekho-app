@@ -6,7 +6,7 @@ import Header from '../components/main/Header'
 const TC = () => {
     return (
         <>
-            <div className='max-w-7xl  m-auto h-full flex justify-center items-center p-4 my-8'>
+            <div className='max-w-7xl  m-auto h-full flex justify-center items-center p-4 '>
                 <div className='flex flex-col gap-2 '>
                     <h2>Terms of Use</h2>
                     <p>By accessing this Website, accessible from <a href="https://careerdekho.ai/">https://careerdekho.ai/</a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
