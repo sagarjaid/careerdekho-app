@@ -47,27 +47,25 @@ const Nav = () => {
                     {toggle ? <svg className="lg:hidden w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                         : <svg className="lg:hidden w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>}
                 </span>
-                <div className='relative'>
-                    <ul className='hidden lg:flex items-center gap-4 cursor-pointer' onClick={handleShowModal}>
-                        <img className='w-10 h-10 rounded-full' src={avatar} width="210px" alt="logo" />
-                    </ul>
+                <ul className='hidden lg:flex items-center gap-4 cursor-pointer' onClick={handleShowModal}>
+                    <img className='w-10 h-10 rounded-full' src={avatar} width="210px" alt="logo" />
+                </ul>
 
-                    {showModal && <div className='absolute right-1 mt-2 w-48 p-4 flex flex-col gap-3 rounded-md border'>
-                        <div className='flex flex-col gap-1'>
-                            <div className='text-sm'>
-                                {user?.displayName}
-                            </div>
-                            <div className='text-xs'>
-                                {user?.email}
-                            </div>
+                {showModal && <div className='hidden absolute right-4 top-14 mt-2 w-48 p-4  lg:flex  flex-col gap-3 rounded-md border bg-white'>
+                    <div className='flex flex-col gap-1'>
+                        <div className='text-sm'>
+                            {user?.displayName}
                         </div>
-                        <div onClick={handleLogout} className={toggle ? "flex justify-center items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm p-2" : "flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2"}>
-                            <img className="w-3 h-3" src="../../media/logout.svg" alt="logout" />
-                            {!toggle && <span className="m-1 text-sm" >Logout</span>}
+                        <div className='text-xs'>
+                            {user?.email}
                         </div>
+                    </div>
+                    <div onClick={handleLogout} className={toggle ? "flex justify-center items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm p-2" : "flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2"}>
+                        <img className="w-3 h-3" src="../../media/logout.svg" alt="logout" />
+                        {!toggle && <span className="m-1 text-sm" >Logout</span>}
+                    </div>
+                </div>}
 
-                    </div>}
-                </div>
 
             </div>
             {toggle ? <div className='absolute z-50 bg-white px-6 w-screen sd:w-[35%]  right-0 h-screen lg:hidden'>
