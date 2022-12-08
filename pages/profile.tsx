@@ -56,9 +56,6 @@ const Profile = () => {
                 .then((response) => response.json())
                 .then(json => {
 
-
-
-
                     let userApiuid
                     let crrEmail
                     let crrDisplayName
@@ -129,7 +126,7 @@ const Profile = () => {
 
 
     return (
-        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 sd:pl-8'>
 
             <h2 className='text-2xl'>
                 Profile
@@ -138,17 +135,20 @@ const Profile = () => {
             <h3 className='mt-4'>
                 Your Profile
             </h3>
-            <h3 className='text-sm'><span className='font-medium'>Display name</span> : {userData.displayName}</h3>
-            <h3 className='text-sm'><span className='font-medium'>Email</span> : {userData.email}</h3>
-            <h3 className='text-sm'><span className='font-medium'>Date of Birth</span> : {userData.dob}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>Phone Number</span> : {userData.phoneNumber}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>WhatsApp Number</span> : {userData.whatsAppNumber}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>Higherst Education</span> : {userData.higherstEducation}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>User Type</span> : {userData.userType}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>Location</span> : {userData.location}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>1-1 FREE career counseling</span> : {userData.careerCall}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>Best day to reach out you</span> : {userData.bestDay}</h3 >
-            <h3 className='text-sm'><span className='font-medium'>Best Time to reach out you</span> : {userData.bestTime}</h3 >
+            {(userData.displayName !== "") ? <>
+                <h3 className='text-sm'><span className='font-medium'>Display name</span> : {userData.displayName}</h3>
+                <h3 className='text-sm'><span className='font-medium'>Email</span> : {userData.email}</h3>
+                <h3 className='text-sm'><span className='font-medium'>Date of Birth</span> : {userData.dob}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>Phone Number</span> : {userData.phoneNumber}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>WhatsApp Number</span> : {userData.whatsAppNumber}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>Higherst Education</span> : {userData.higherstEducation}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>User Type</span> : {userData.userType}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>Location</span> : {userData.location}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>1-1 FREE career counseling</span> : {userData.careerCall}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>Best day to reach out you</span> : {userData.bestDay}</h3 >
+                <h3 className='text-sm'><span className='font-medium'>Best Time to reach out you</span> : {userData.bestTime}</h3 >
+            </> : <div>Loading...</div>}
+
         </div>
     )
 }

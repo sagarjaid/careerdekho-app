@@ -1,13 +1,23 @@
 import React from 'react'
 import Footer from '../components/main/Footer'
 import Header from '../components/main/Header'
+import { initFirebase } from '../firebase/Firebase';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 
 const TC = () => {
+
+    initFirebase()
+    const auth = getAuth();
+    const [user, loading] = useAuthState(auth);
+    const router = useRouter();
     return (
         <>
-            <div className='max-w-7xl  m-auto h-full flex justify-center items-center p-4 '>
-                <div className='flex flex-col gap-2 '>
+            <div
+                className={user ? "max-w-7xl m-auto flex justify-center items-center p-4 overflow-y-scroll" : "max-w-7xl m-auto flex justify-center items-center p-4"}>
+                <div className='flex flex-col gap-2 justify-start h-full'>
                     <h2>Terms of Use</h2>
                     <p>By accessing this Website, accessible from <a href="https://careerdekho.ai/">https://careerdekho.ai/</a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
                     <h2>Use License</h2>

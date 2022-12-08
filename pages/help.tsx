@@ -67,7 +67,7 @@ const Help = () => {
 
 
 
-        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 sd:pl-8'>
 
             <h2 className='text-2xl'>
                 Support

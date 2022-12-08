@@ -28,7 +28,7 @@ const Login = () => {
   }
 
   return (
-    <div className="flex flex-col gap-2 justify-center items-center h-screen">
+    <div className="flex flex-col gap-2 justify-center items-center h-[80vh]">
       <h1>Login</h1>
       <img
         className="cursor-pointer"

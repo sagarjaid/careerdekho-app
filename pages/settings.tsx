@@ -32,43 +32,8 @@ const Settings = () => {
         router.push("/");
     }
 
-    // useEffect(() => {
-
-    //     if (user) {
-    //         console.log(user, " user got called");
-
-    //         let userApiuid
-
-    //         let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/usersDb/data';
-    //         fetch(url)
-    //             .then((response) => response.json())
-    //             .then(json => {
-    //                 userApiuid = json.data[0]?.uid || ""
-
-
-    //                 console.log(user.uid, "uid");
-
-    //                 console.log(userApiuid, "userApiuid");
-
-    //                 if (user.uid == userApiuid) {
-    //                     console.log("true got called");
-
-    //                     if (router.pathname === "/onboarding") {
-    //                         router.push("/discover")
-    //                     }
-
-    //                 } else {
-    //                     console.log("false got called");
-    //                     router.push("/onboarding")
-
-    //                 }
-    //             })
-    //     }
-
-    // }, [user]);
-
     return (
-        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 sd:pl-8'>
 
             <h2 className='text-2xl'>
                 Settings
@@ -77,14 +42,14 @@ const Settings = () => {
             <h3 onClick={() => { router.push("/profile") }} className='mt-4 cursor-pointer'>
                 Profile
             </h3>
-            <h3 className='cursor-pointer'>
-                <a href="https://careerdekho.ai/tc" target="_blank" rel="noopener noreferrer">About</a>
+            <h3 onClick={() => { router.push("/about") }} className='cursor-pointer'>
+                About
             </h3>
-            <h3 className='cursor-pointer'>
-                <a href="https://careerdekho.ai/tc" target="_blank" rel="noopener noreferrer">Terms of use</a>
+            <h3 onClick={() => { router.push("/tc") }} className='cursor-pointer'>
+                Terms of use
             </h3>
-            <h3 className='cursor-pointer'>
-                <a href="https://careerdekho.ai/pp" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+            <h3 onClick={() => { router.push("/pp") }} className='cursor-pointer'>
+                Privacy policy
             </h3>
             <h3 onClick={handleLogout}>
                 Logout

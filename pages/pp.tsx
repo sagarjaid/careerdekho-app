@@ -1,13 +1,23 @@
 import React from 'react'
 import Footer from '../components/main/Footer'
 import Header from '../components/main/Header'
+import { initFirebase } from '../firebase/Firebase';
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/router";
 
 
 const PrivacyPolicy = () => {
+
+    initFirebase()
+    const auth = getAuth();
+    const [user, loading] = useAuthState(auth);
+    const router = useRouter();
     return (
         <>
-            <div className='max-w-7xl  m-auto h-full flex justify-center items-center p-4'>
-                <div className='flex flex-col gap-2'>
+            <div
+                className={user ? "max-w-7xl m-auto flex justify-center items-center p-4 overflow-y-scroll" : "max-w-7xl m-auto flex justify-center items-center p-4"}>
+                <div className='flex flex-col gap-2 justify-start h-full'>
                     <h1 >Privacy Policy</h1>
                     <h2>Who we are</h2>
                     <p>Our website address is: https://careerdekho.ai.</p>
@@ -33,7 +43,6 @@ const PrivacyPolicy = () => {
                     <p>If you have an account on this site, or have left comments, you can request to receive an exported file of the personal data we hold about you, including any data you have provided to us. You can also request that we erase any personal data we hold about you. This does not include any data we are obliged to keep for administrative, legal, or security purposes.</p>
                     <h2>Where your data is sent</h2>
                     <p>Visitor comments may be checked through an automated spam detection service.</p>
-
                 </div>
             </div>
         </>

@@ -70,32 +70,32 @@ const Nav = () => {
             </div>
             {toggle ? <div className='absolute z-50 bg-white px-6 w-screen sd:w-[35%]  right-0 h-screen lg:hidden'>
                 <div className='flex flex-col gap-4 mt-2'>
-                    <div onClick={() => router.push("/dash")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => { router.push("/dash"), handleToggle() }} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/dashboard.svg" alt="dashboard" />
                         <span className="m-1">Dashboard</span>
                     </div>
 
-                    <div onClick={() => router.push("/discover")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => { handleToggle(), router.push("/discover") }} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/discover.svg" alt="discover" />
                         <span className="m-1">Discover</span>
                     </div>
 
-                    <div onClick={() => router.push("/profile")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => { handleToggle(), router.push("/profile") }} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/profile.svg" alt="profile" />
                         <span className="m-1">Profile</span>
                     </div>
 
-                    <div onClick={() => router.push("/Settings")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => { handleToggle(), router.push("/settings") }} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/settings.svg" alt="settings" />
                         <span className="m-1">Settings</span>
                     </div>
 
-                    <div onClick={() => router.push("/help")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => { handleToggle(), router.push("/help") }} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/support.svg" alt="support" />
                         <span className="m-1">Support</span>
                     </div>
 
-                    <div onClick={() => router.push("/invite")} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
+                    <div onClick={() => { handleToggle(), router.push("/invite") }} className="flex justify-start items-center gap-2 cursor-pointer hover:bg-gray-50 rounded-sm px-2">
                         <img className="w-5 h-5" src="../../media/invite-friend.svg" alt="invite friend" />
                         <span className="m-1">Invite friend</span>
                     </div>

@@ -20,7 +20,7 @@ const Footer = () => {
                                 <li className='text-sm'><a href="/location">contact us</a></li>
                             </ul>
 
-                            <ul className='w-full -ml-1'>
+                            <ul className='w-full sd:-ml-1'>
                                 <li>legal</li>
                                 <li className='text-sm mt-2'><a href="/tc">terms of use</a> </li>
                                 <li className='text-sm'><a href="/pp">privacy policy</a></li>
