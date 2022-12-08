@@ -4,9 +4,26 @@ import { initFirebase } from '../firebase/Firebase';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
+import Trending from '../components/Trending';
+import { json } from 'stream/consumers';
 
 
 const Profile = () => {
+
+    const [userData, setUserData] = useState({
+        email: "",
+        displayName: "",
+        dob: "",
+        phoneNumber: 0,
+        whatsAppNumber: 0,
+        higherstEducation: "",
+        userType: "",
+        location: "",
+        careerCall: "",
+        bestDay: "",
+        bestTime: "",
+    })
+
 
     initFirebase()
     const auth = getAuth();
@@ -27,43 +44,112 @@ const Profile = () => {
         </div >;
     }
 
-    // useEffect(() => {
 
-    //     if (user) {
-    //         console.log(user, " user got called");
+    useEffect(() => {
 
-    //         let userApiuid
-
-    //         let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/usersDb/data';
-    //         fetch(url)
-    //             .then((response) => response.json())
-    //             .then(json => {
-    //                 userApiuid = json.data[0]?.uid || ""
+        if (user) {
+            console.log(user, " user got called");
 
 
-    //                 console.log(user.uid, "uid");
+            let url = 'https://api.sheety.co/33d9ec27f5c7dfb130eb655baacab48d/usersDb/data';
+            fetch(url)
+                .then((response) => response.json())
+                .then(json => {
 
-    //                 console.log(userApiuid, "userApiuid");
 
-    //                 if (user.uid == userApiuid) {
-    //                     console.log("true got called");
 
-    //                     if (router.pathname === "/onboarding") {
-    //                         router.push("/discover")
-    //                     }
 
-    //                 } else {
-    //                     console.log("false got called");
-    //                     router.push("/onboarding")
+                    let userApiuid
+                    let crrEmail
+                    let crrDisplayName
+                    let crrDob
+                    let crrPhoneNumber
+                    let crrWhatsAppNumber
+                    let crrHigherstEducation
+                    let crrUserType
+                    let crrLocation
+                    let crrCareerCall
+                    let crrBestDay
+                    let crrBestTime
 
-    //                 }
-    //             })
-    //     }
 
-    // }, [user]);
+                    json.data.map((el: any) => {
+                        if (el.uid === user.uid) {
+                            userApiuid = el.uid
+                            crrDob = el.dob
+                            crrEmail = el.email
+                            crrDisplayName = el.displayName
+                            crrPhoneNumber = el.phoneNumber
+                            crrWhatsAppNumber = el.whatsAppNumber
+                            crrHigherstEducation = el.higherstEducation
+                            crrUserType = el.userType
+                            crrLocation = el.location
+                            crrCareerCall = el.careerCall
+                            crrBestDay = el.bestDay
+                            crrBestTime = el.bestTime
+                        }
+                    })
+
+
+                    console.log(user.uid, "uid");
+
+                    console.log(userApiuid, "userApiuid");
+
+                    if (user.uid == userApiuid) {
+                        console.log("true got called");
+
+                        setUserData({
+                            ...userData,
+                            dob: crrDob || "",
+                            displayName: crrDisplayName || "",
+                            email: crrEmail || "",
+                            phoneNumber: crrPhoneNumber || 0,
+                            whatsAppNumber: crrWhatsAppNumber || 0,
+                            higherstEducation: crrHigherstEducation || "",
+                            userType: crrUserType || "",
+                            location: crrLocation || "",
+                            careerCall: crrCareerCall || "",
+                            bestDay: crrBestDay || "",
+                            bestTime: crrBestTime || ""
+                        })
+
+
+
+                        if (router.pathname === "/onboarding") {
+                            router.push("/dash")
+                        }
+                    } else {
+                        console.log("false got called");
+                        router.push("/onboarding")
+                    }
+                })
+        }
+
+    }, [user]);
+
 
     return (
-        <div>Profile</div>
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+
+            <h2 className='text-2xl'>
+                Profile
+            </h2>
+
+            <h3 className='mt-4'>
+                Your Profile
+            </h3>
+            <h3 className='text-sm'><span className='font-medium'>Display name</span> : {userData.displayName}</h3>
+            <h3 className='text-sm'><span className='font-medium'>Email</span> : {userData.email}</h3>
+            <h3 className='text-sm'><span className='font-medium'>Date of Birth</span> : {userData.dob}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>Phone Number</span> : {userData.phoneNumber}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>WhatsApp Number</span> : {userData.whatsAppNumber}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>Higherst Education</span> : {userData.higherstEducation}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>User Type</span> : {userData.userType}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>Location</span> : {userData.location}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>1-1 FREE career counseling</span> : {userData.careerCall}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>Best day to reach out you</span> : {userData.bestDay}</h3 >
+            <h3 className='text-sm'><span className='font-medium'>Best Time to reach out you</span> : {userData.bestTime}</h3 >
+        </div>
     )
 }
 

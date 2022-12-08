@@ -4,6 +4,7 @@ import { initFirebase } from '../firebase/Firebase';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
+import Script from 'next/script';
 
 
 const Help = () => {
@@ -63,7 +64,22 @@ const Help = () => {
     // }, [user]);
 
     return (
-        <div>discover</div>
+
+
+
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+
+            <h2 className='text-2xl'>
+                Support
+            </h2>
+
+            <div>
+                <p >Facing a issue? wite to us at</p>
+                <a className="text-blue-500 text-center text-sm" href="mailto:careerdekhoai@gmail.com">careerdekhoai@gmail.com</a>
+            </div>
+
+        </div >
+
     )
 }
 

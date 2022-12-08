@@ -27,6 +27,11 @@ const Settings = () => {
         </div >;
     }
 
+    const handleLogout = () => {
+        auth.signOut()
+        router.push("/");
+    }
+
     // useEffect(() => {
 
     //     if (user) {
@@ -63,7 +68,28 @@ const Settings = () => {
     // }, [user]);
 
     return (
-        <div>Settings</div>
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+
+            <h2 className='text-2xl'>
+                Settings
+            </h2>
+
+            <h3 onClick={() => { router.push("/profile") }} className='mt-4 cursor-pointer'>
+                Profile
+            </h3>
+            <h3 className='cursor-pointer'>
+                <a href="https://careerdekho.ai/tc" target="_blank" rel="noopener noreferrer">About</a>
+            </h3>
+            <h3 className='cursor-pointer'>
+                <a href="https://careerdekho.ai/tc" target="_blank" rel="noopener noreferrer">Terms of use</a>
+            </h3>
+            <h3 className='cursor-pointer'>
+                <a href="https://careerdekho.ai/pp" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+            </h3>
+            <h3 onClick={handleLogout}>
+                Logout
+            </h3>
+        </div>
     )
 }
 

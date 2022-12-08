@@ -51,7 +51,7 @@ const dash = (props: any) => {
 
                     let userApiuid
 
-                    let userData = json.data.map((el: any) => {
+                    json.data.map((el: any) => {
                         if (el.uid === user.uid) {
                             userApiuid = el.uid
                         }

@@ -4,6 +4,7 @@ import { initFirebase } from '../firebase/Firebase';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
+import Trending from '../components/Trending';
 
 
 const Discover = () => {
@@ -63,7 +64,43 @@ const Discover = () => {
     // }, [user]);
 
     return (
-        <div>discover</div>
+        <div className='flex flex-col items-start gap-4 w-full h-full justify-start p-4 pl-8'>
+
+            <h2 className='text-2xl'>
+                Discover
+            </h2>
+            <h3>
+                Your past career search
+            </h3>
+
+            <div className='flex flex-col lg:flex-row justify-between gap-4'>
+                <Trending name="Software Engineer" />
+                <Trending name="Data Scientist" />
+            </div>
+            <h3 className='mt-4'>
+                Trednding career searches across india
+            </h3>
+            <div className='max-w-4xl'>
+                <div className='hidden sd:flex flex-wrap gap-4 justify-start lg:justify-start'>
+                    <Trending name="Software Engineer" />
+                    <Trending name="Civil Engineer" />
+                    <Trending name="Fashion Designer" />
+                    <Trending name="Data Scientist" />
+                    <Trending name="Graphic Designer" />
+                    <Trending name="Digital Marketer" />
+                    <Trending name="Air Hostess" />
+                    <Trending name="Web Designer" />
+                    <Trending name="Project Manager" />
+                </div>
+            </div>
+            <div className='sd:hidden flex flex-wrap gap-4 justify-start lg:justify-around'>
+                <Trending name="Fashion Designer" />
+                <Trending name="Data Scientist" />
+                <Trending name="Graphic Designer" />
+                <Trending name="Digital Marketer" />
+            </div>
+
+        </div>
     )
 }
 
