@@ -5,6 +5,7 @@ import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
 import Script from 'next/script';
+import Timeline from '../components/Timeline';
 
 
 const Help = () => {
@@ -77,7 +78,6 @@ const Help = () => {
                 <p >Facing a issue? wite to us at</p>
                 <a className="text-blue-500 text-center text-sm" href="mailto:careerdekhoai@gmail.com">careerdekhoai@gmail.com</a>
             </div>
-
         </div >
 
     )

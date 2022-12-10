@@ -99,7 +99,6 @@ const Discover = () => {
                 <Trending name="Graphic Designer" />
                 <Trending name="Digital Marketer" />
             </div>
-
         </div>
     )
 }

@@ -41,6 +41,26 @@ const id = () => {
     return (
         <>
             <div className='flex flex-row w-full justify-between overflow-hidden'>
+                <div className='overflow-y-scroll'>
+                    <Timeline screenName="What is" />
+                    <Timeline screenName="Best for" />
+                    <Timeline screenName="Career Trends" />
+                    <Timeline screenName="Career Path" />
+                    <Timeline screenName="Universities" />
+                    <Timeline screenName="Colleges" />
+                    <Timeline screenName="Classes & Institutions" />
+                    <Timeline screenName="Free Courses" />
+                    <Timeline screenName="Paid Courses" />
+                    <Timeline screenName="Companies & Cities" />
+                    <Timeline screenName="Salary Insights" />
+                    <Timeline screenName="Job Titles" />
+                    <Timeline screenName="Job Titles Salary" />
+                    <Timeline screenName="Job JD" />
+                    <Timeline screenName="Day in a Life" />
+                    <Timeline screenName="Entrepreneurial Scope" />
+                    <Timeline screenName="Related Job Titles" />
+                    <Timeline screenName="Done" />
+                </div>
                 <div className='max-w-6xl w-3/4 p-4 pl-8 flex h-full'>
                     <div className='flex flex-col gap-4'>
                         <h2 className='font-medium text-lg'>{careerName} Career Path</h2>
@@ -61,26 +81,6 @@ const id = () => {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className='overflow-y-scroll'>
-                    <Timeline screenName="What is" />
-                    <Timeline screenName="Best for" />
-                    <Timeline screenName="Career Trends" />
-                    <Timeline screenName="Career Path" />
-                    <Timeline screenName="Universities" />
-                    <Timeline screenName="Colleges" />
-                    <Timeline screenName="Classes & Institutions" />
-                    <Timeline screenName="Free Courses" />
-                    <Timeline screenName="Paid Courses" />
-                    <Timeline screenName="Companies & Cities" />
-                    <Timeline screenName="Salary Insights" />
-                    <Timeline screenName="Job Titles" />
-                    <Timeline screenName="Job Titles Salary" />
-                    <Timeline screenName="Job JD" />
-                    <Timeline screenName="Day in a Life" />
-                    <Timeline screenName="Entrepreneurial Scope" />
-                    <Timeline screenName="Related Job Titles" />
-                    <Timeline screenName="Done" />
                 </div>
             </div>
         </>
