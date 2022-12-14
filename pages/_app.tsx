@@ -19,6 +19,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
 
 
+  // add .env local file to repo
+
   initFirebase()
   const auth = getAuth();
   const [user, loading] = useAuthState(auth);
